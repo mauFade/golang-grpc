@@ -13,8 +13,8 @@ type Server struct {
 	pb.UnimplementedHelloServer
 }
 
-func (server *Server) sayHello (context context.Context, inbound *pb.HelloRequest) (*pb.HelloResponse, error) {
-	return &pb.HelloResponse{Name: "Fala aí " + inbound.GetName()}, nil
+func (server *Server) SayHello(context context.Context, request *pb.HelloRequest) (*pb.HelloResponse, error) {
+	return &pb.HelloResponse{Name: "Fala meu mano " + request.GetName()}, nil
 }
 
 func main() {
